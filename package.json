@@ -25,6 +25,15 @@
     "webpack": "^5.96.1",
     "webpack-cli": "^4.10.0"
   },
+  "keywords": [
+    "react",
+    "utils",
+    "api",
+    "short-utils",
+    "unique-id",
+    "date-formatting",
+    "data-filtering"
+  ],
   "homepage": "https://github.com/Ririena/react-short-utils",
   "license": "MIT",
   "repository": {
