@@ -35,6 +35,40 @@ const filteredData = filterByKey(data, "name", "Jane");
 console.log(filteredData);   [{ id: 2, name: "Jane" }]
 ```
 
+Example 2
 
+```bash
+import React, { useState, useEffect } from "react";
+import {useApi} from 'react-short-utils'
+const App = () => {
+  const baseUrl = "https://dummyjson.com/products/2"; 
+
+  const { data, loading, error, fetchData } = useApi(baseUrl, {
+    method: "GET",  
+  });
+
+  useEffect(() => {
+    fetchData(); 
+  }, [fetchData]);
+
+  return (
+    <div>
+      {loading && <p>Loading...</p>}  
+      {error && <p>Error: {error}</p>}  
+      {data && (
+        <div>
+          <h1>Product Info</h1>
+          <p><strong>Title:</strong> {data.title}</p> 
+          <p><strong>Description:</strong> {data.description}</p>  
+          <p><strong>Price:</strong> ${data.price}</p>  
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default App;
+
+```
 
 
